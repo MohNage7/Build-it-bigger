@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.widget.TextView;
 
 public class DisplayJokeActivity extends AppCompatActivity {
@@ -23,14 +22,15 @@ public class DisplayJokeActivity extends AppCompatActivity {
 
 
         String joke = getJoke();
-        if (!TextUtils.isEmpty(joke))
-            jokeTxtView.setText(joke);
+        jokeTxtView.setText(joke);
 
     }
 
     private String getJoke() {
         Intent intent = getIntent();
-        return intent.getStringExtra(JOKE_EXTRA);
+        if (intent.hasExtra(JOKE_EXTRA))
+            return intent.getStringExtra(JOKE_EXTRA);
+        else return "";
     }
 
 }

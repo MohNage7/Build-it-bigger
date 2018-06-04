@@ -1,15 +1,18 @@
 package com.udacity.gradle.builditbigger.backend;
 
-import com.mohnage7.jokefactorylibrary.Joker;
-
 /**
  * The object model for the data we are sending through endpoints
  */
 public class MyJoke {
 
+    private String joke;
+
+    public void setJoke(String joke) {
+        this.joke = joke;
+    }
 
     public String getJoke() {
-        return new Joker().getRandomJokeJoke();
+        return joke;
     }
 
 }

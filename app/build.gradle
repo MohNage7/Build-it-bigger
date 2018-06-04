@@ -32,19 +32,17 @@ android {
         }
     }
 
-    flavorDimensions "freeDim", "paidDim"
+    flavorDimensions "dim"
 
 
     productFlavors {
         free {
-            dimension 'freeDim'
+            dimension 'dim'
             applicationId 'com.udacity.gradle.builditbigger.free'
-            buildConfigField "String", "BUILD_VARIANT", "\"free\""
         }
         paid {
-            dimension 'paidDim'
+            dimension 'dim'
             applicationId 'com.udacity.gradle.builditbigger.paid'
-            buildConfigField "String", "BUILD_VARIANT", "\"paid\""
 
         }
     }
@@ -66,4 +64,4 @@ dependencies {
     })
     testImplementation 'junit:junit:4.12'
     implementation project(':jokedisplaylibrary')
- }
+}
